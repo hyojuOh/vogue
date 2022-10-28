@@ -1,5 +1,11 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@font-face {
+    font-family: 'YUniverse-B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 *{margin: 0; padding: 0;}
 li{list-style: none;}
 img{display: block; width: 100%;}
@@ -36,9 +42,12 @@ header{
 nav{
     background: white;
     padding: 10px 0;
-    position: sticky;
-    top: 0;
+    position: static;
+    width: 100%;
+    top: 18%;
+    z-index: 99999999;
 }
+
 .gnb a:hover{
     border-bottom: 3px firebrick solid;
 }
@@ -47,10 +56,38 @@ nav{
 #contents{
     width: 70%;
     margin: 0 auto;
+    transition: .3s;
 }
 
 .imgBox li{
     width: 33.3333%;
+    position: relative;
+    display: flex;
+}
+.i-box{
+    position: absolute;
+    border: 20px firebrick solid;
+    width: 90%; height: 93.1%;
+    display: none;
+}
+
+p{
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 3px #333;
+    position: relative;
+    top: 95%;
+    font-family: 'YUniverse-B';
+    font-size: 1.2rem;
+}
+.i-box1>p{
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 3px #fff;
+    position: relative;
+    top: 95%;
+    font-family: 'YUniverse-B';
+    font-size: 1.2rem;
 }
 
 .imgBox{
@@ -58,12 +95,20 @@ nav{
     flex-wrap: wrap;
 }
 
-#contents a{
-    border: 5px white solid;
+/* #contents a{
+    border: 10px white solid;
+} */
+
+.mCon{
+    display: flex;
+    position: relative;
 }
 
-#contents a:hover{
-    border: 10px firebrick solid;
+.box{
+    position: absolute;
+    width: 96.6%; height: 94%;
+    border: 20px firebrick solid;
+    display: none;
 }
 
 footer a{
@@ -95,11 +140,12 @@ footer{
     top: 122px;
     display: none;
     transition: .4s;
+    z-index: 99999999;
 }
 
 .popup_nav a:hover{
     background: firebrick;
-    padding: 10px 10px;
+    padding: 10px 40px;
     font-size: 20px;
 }
 
@@ -112,7 +158,7 @@ footer{
 }
 
 .bar{
-    height: 8px; width: 40px;
+    height: 4px; width: 40px;
     background: #666;
     position: relative;
 }
@@ -122,14 +168,14 @@ footer{
     opacity: 0;
 }
 .burger.on .bar:nth-child(2){
-    top: 8px;
+    top: 4px;
     transform: rotate(45deg);
 }
 .burger.on .bar:nth-child(3){
     transform: rotate(-45deg);
 }
 .burger.on .bar:nth-child(4){
-    top: 8px;
+    top: 4px;
     opacity: 0;
 }
 
